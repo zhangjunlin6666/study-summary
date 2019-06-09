@@ -1,5 +1,5 @@
 #判断当前分支是否是gh-pages，如果是就执行判断后面的脚本
-d=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`
+d=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`;
 echo $d
 if [ $d != "gh-pages" ];then
     echo '当前分支不是gh-pages分支不能执行该脚本';
