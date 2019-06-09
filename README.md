@@ -1,9 +1,10 @@
 
-# Introduction
+# 说明
 
-这是一本使用 gitbook 制作电子书籍的快速上手指南。
-分为两个章节：
-第一章介绍 gitbook.com 在线平台
-第二章介绍 gitbook 基础知识
-第三章介绍 markdown 基础知识
-快看看
+本笔记为记录本人日常学习、以及工作中所遇到的问题，本人能力有限，如有写的不对的地方希望大家指出！
+
+本人学习过程中主要参考：
+
+[gitbook--使用笔记](https://morrowind.gitbooks.io/gitbook_notes/index.html)
+
+[gitbook简明教程](http://www.chengweiyang.cn/gitbook/index.html)
