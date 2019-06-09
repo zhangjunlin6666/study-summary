@@ -7,17 +7,12 @@ if [ $d != "gh-pages" ];then
 fi
 # 先拉取master的代码
 git pull origin master
-# 删除当前
+# 删除根目录、classification下的md文件以及book.json和sh脚本文件下的push脚本
 rm -fr ../*.md ../classification/**/*.md ../book.json ./push.sh
-# 判断是否有_book文件
-if [ -d "_book" ]; then
-    echo ${-d}
-    echo '删除啦'
-    # 将目录_book下的文件复制到当前目录下
-    cp -r ../_book/* ./
-    # 删除_book文件夹
-    rm -rf ../_book
-fi
+# 将目录_book下的文件复制到当前目录下
+cp -r ../_book/* ./
+# 删除_book文件夹
+rm -rf ../_book
 # 提交至github仓库
 git add .
 git commit -m '内容更新'
