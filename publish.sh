@@ -1,3 +1,4 @@
+git pull origin master
 rm -fr *.md part*/*.md book.json push.sh
 # 判断是否有_book文件
 if [ -d "_book" ]; then
