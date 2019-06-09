@@ -8,7 +8,7 @@ fi
 # 先拉取master的代码
 git pull origin master
 # 删除当前
-rm -fr *.md part*/*.md book.json push.sh
+rm -fr *.md classification/**/*.md book.json push.sh
 # 判断是否有_book文件
 if [ -d "_book" ]; then
     echo '删除啦'
