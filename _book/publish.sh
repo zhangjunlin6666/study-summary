@@ -6,7 +6,7 @@ if [ $d != "gh-pages" ];then
     exit 0;
 fi
 # 先拉取master的代码
-git pull origin master
+git merge master
 # # 删除根目录、classification下的md文件以及book.json和sh脚本文件下的push脚本 =============
 # rm -fr ./*.md ./classification/**/*.md ./book.json ./push.sh
 # # 将目录_book下的文件复制到当前目录下 ================
