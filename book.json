@@ -1,7 +1,8 @@
 {
     "plugins": [
         "disqus",
-        "multipart"
+        "multipart",
+        "toggle-chapters"
     ],
     "pluginsConfig": {
         "disqus": {
