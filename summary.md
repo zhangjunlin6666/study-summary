@@ -7,6 +7,8 @@
 
 ## 第一章关于markdown用法
 
+* [markdown用法介绍](classification/markdown/index.md)
+
 <!-- ## 第二章关于github用法
 
 * [1.gitbook](classification/part1/README.md)
