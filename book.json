@@ -1,6 +1,5 @@
 {
     "plugins": [
-        "disqus",
         "multipart",
         "toggle-chapters"
     ],
