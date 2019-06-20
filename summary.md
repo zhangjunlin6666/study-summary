@@ -22,6 +22,10 @@
   * [12.脚注](classification/markdown/脚注.md)
   * [13.自动链接](classification/markdown/自动链接.md)
   * [14.斜杠转义](classification/markdown/斜杠转义.md)
+  * [15.时序图](classification/markdown/时序图.md)
+  * [16.流程图](classification/markdown/流程图.md)
+
+## 第二章关于gitbook简介
 
 <!-- ## 第二章关于github用法
 
