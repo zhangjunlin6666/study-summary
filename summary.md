@@ -29,6 +29,11 @@
 
 * [gitbook教程](classification/gitbook/index.md)
 
+## 第三章vue教程
+
+* [vue教程](classification/vue/index.md)
+  * [组件化](classification/vue/组件化.md)
+
 <!-- 
 ## 第三章关于git简单用法（目前仅限用于简单的gitbook书籍提交）
 
