@@ -1182,7 +1182,7 @@ Vue.prototype.$bus = <span class="hljs-keyword">new</span> Bus();
 <p>vuex &#x662F; vue &#x7684;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x3002;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x4F1A;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x5237;&#x65B0;&#x4E4B;&#x540E;&#x5C31;&#x56DE;&#x5230;&#x4E86;&#x521D;&#x59CB;&#x72B6;&#x6001;&#xFF0C;&#x5177;&#x4F53;&#x505A;&#x6CD5;&#x5E94;&#x8BE5;&#x5728;vuex&#x91CC;&#x6570;&#x636E;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#x628A;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#x4E00;&#x4EFD;&#x4FDD;&#x5B58;&#x5230;localStorage&#x91CC;&#x9762;&#xFF0C;&#x5237;&#x65B0;&#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x679C;localStorage&#x91CC;&#x6709;&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53D6;&#x51FA;&#x6765;&#x518D;&#x66FF;&#x6362;store&#x91CC;&#x7684;state&#x3002;</p>
 <h2 id="&#x5B9E;&#x9645;&#x6848;&#x4F8B;">&#x5B9E;&#x9645;&#x6848;&#x4F8B;</h2>
 <h3 id="&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x5047;&#x8BBE;&#x5728;&#x540C;&#x4E00;&#x76EE;&#x5F55;&#x4E0B;&#xFF1A;">&#x4EE3;&#x7801;&#x6F14;&#x793A;(&#x5047;&#x8BBE;&#x5728;&#x540C;&#x4E00;&#x76EE;&#x5F55;&#x4E0B;)&#xFF1A;</h3>
-<h4 id="attr&#x3001;listeners&#x901A;&#x4FE1;&#x6848;&#x4F8B;">$attr&#x3001;$listeners&#x901A;&#x4FE1;&#x6848;&#x4F8B;</h4>
+<h4 id="attr&#x3001;listeners&#x901A;&#x4FE1;&#x4EE5;&#x53CA;slot&#x63D2;&#x69FD;&#x6848;&#x4F8B;">$attr&#x3001;$listeners&#x901A;&#x4FE1;&#x4EE5;&#x53CA;slot&#x63D2;&#x69FD;&#x6848;&#x4F8B;</h4>
 <p>&#x5DF2;&#x6211;&#x57FA;&#x4E8E;elementui&#x7684;table&#x7EC4;&#x4EF6;&#x4E8C;&#x6B21;&#x5C01;&#x88C5;&#x7684;&#x8868;&#x683C;&#x7EC4;&#x4EF6;&#x4E3A;&#x4F8B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x5217;&#x8868;&#x4EE5;&#x53CA;column&#x5217;&#x7684;&#x5217;&#x8868;&#x8FBE;&#x5230;&#x52A8;&#x6001;&#x6E32;&#x67D3;&#x7684;&#x6548;&#x679C;&#xFF0C;
 &#x7C7B;&#x4F3C;&#x4E8E;iview&#x7684;&#x5217;&#x8868;&#x914D;&#x7F6E;&#x3002;</p>
 <pre><code class="lang-html"><span class="hljs-comment">&lt;!-- &#x5B50;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49; --&gt;</span>
@@ -1342,6 +1342,213 @@ Vue.prototype.$bus = <span class="hljs-keyword">new</span> Bus();
 }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
+<h4 id="parent&#x3001;children&#x3001;provide&#x3001;inject&#x901A;&#x4FE1;&#x6848;&#x4F8B;">$parent&#x3001;$children&#x3001;provide&#x3001;inject&#x901A;&#x4FE1;&#x6848;&#x4F8B;</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/* &#x57FA;&#x4E8E;$parent&#x3001;$children&#x5C01;&#x88C5;&#x7684;dispatch&#x548C;broadcast */</span>
+<span class="hljs-comment">// &#x7531;&#x4E8E;vue2.0&#x4E2D;&#x7684;$dispatch&#x5DF2;&#x5E9F;&#x5F03;&#xFF0C;&#x53EF;&#x7ED3;&#x5408;this.$parent&#x81EA;&#x5B9A;&#x4E49;$boradcast&#xFF0C;&#x5411;&#x4E0A;&#x901A;&#x77E5;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">$dispatch</span> (<span class="hljs-params">eventName, data</span>) </span>{
+    <span class="hljs-keyword">let</span> parent = <span class="hljs-keyword">this</span>.$parent;
+    <span class="hljs-keyword">while</span> (parent) {
+        parent.$emit(eventName, data);
+        parent = parent.$parent;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">boradcast</span> (<span class="hljs-params">eventName, data</span>) </span>{
+    <span class="hljs-keyword">let</span> children = <span class="hljs-keyword">this</span>.$children;
+    children.forEach(child =&gt; {
+        child.$emit(eventName, data);
+        <span class="hljs-keyword">if</span> (child.$children.length) {
+            boradcast.call(child, eventName, data);
+        }
+    });
+}
+
+<span class="hljs-comment">// &#x7531;&#x4E8E;vue2.0&#x4E2D;&#x7684;$broadcast&#x5DF2;&#x5E9F;&#x5F03;&#xFF0C;&#x53EF;&#x7ED3;&#x5408;this.$children&#x81EA;&#x5B9A;&#x4E49;$boradcast&#xFF0C;&#x5411;&#x4E0B;&#x5E7F;&#x64AD;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">$boradcast</span> (<span class="hljs-params">eventName, data</span>) </span>{
+    boradcast.call(<span class="hljs-keyword">this</span>, eventName, data);
+}
+
+<span class="hljs-comment">// &#x5728;main.js&#x4E2D;&#x5C06;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x6302;&#x8F7D;&#x5230;vue&#x7684;&#x539F;&#x578B;&#x4E0A;</span>
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- &#x7B80;&#x6613;&#x8868;&#x5355;&#x7EC4;&#x4EF6; --&gt;</span>
+
+<span class="hljs-comment">&lt;!-- el-form --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;el_form&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    provide(){
+        <span class="hljs-keyword">return</span> {
+            <span class="hljs-string">&quot;elform&quot;</span>:<span class="hljs-keyword">this</span> <span class="hljs-comment">// &#x6CE8;&#x5165;&#x5B50;&#x5B59;&#x7EC4;&#x4EF6;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x662F;&#x5B50;&#x5B59;&#x7EC4;&#x4EF6;&#x53EF;&#x8BBF;&#x95EE;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;</span>
+        }
+    },
+    props:{
+        model:{
+            type:<span class="hljs-built_in">Object</span>,
+            <span class="hljs-keyword">default</span>(){
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>
+            }
+        },
+        rules:{
+            type:<span class="hljs-built_in">Object</span>,
+            <span class="hljs-keyword">default</span>(){
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>
+            }
+        }
+    },
+    methods:{
+        validate(cb){
+            <span class="hljs-keyword">let</span> child = <span class="hljs-keyword">this</span>.$children.filter(v =&gt;v.prop).map(child =&gt; child.validate());
+            <span class="hljs-built_in">Promise</span>.all(child).then(_=&gt; {
+                cb(<span class="hljs-literal">true</span>)
+            }).catch(_=&gt; {
+                cb(<span class="hljs-literal">false</span>)
+            })
+        }
+    }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- el-form-item --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;el_form-item&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;label&apos;</span>&gt;</span>{{label}}<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;error&apos;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&apos;color:red&apos;</span>&gt;</span>{{error}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> schema <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;async-validator&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    data() {
+        <span class="hljs-keyword">return</span> {
+            error:<span class="hljs-string">&apos;&apos;</span>
+        }
+    },
+    inject:[<span class="hljs-string">&apos;elform&apos;</span>], <span class="hljs-comment">// &#x6CE8;&#x5165;&#x4F9D;&#x8D56;</span>
+    props:{
+        label:{
+            type:<span class="hljs-built_in">String</span>,
+            <span class="hljs-keyword">default</span>:<span class="hljs-string">&apos;&apos;</span>
+        },
+        prop:{
+            type:<span class="hljs-built_in">String</span>,
+            <span class="hljs-keyword">default</span>:<span class="hljs-string">&apos;&apos;</span>
+        }
+    },
+    methods:{
+        <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6709;&#x8FD4;&#x56DE;&#x503C; validator.validate() &#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;promise&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x8BE5;promise&#x629B;&#x51FA;</span>
+        validate(){
+            <span class="hljs-keyword">let</span> form = <span class="hljs-keyword">this</span>.elform, <span class="hljs-comment">// &#x62FF;&#x5230;el-form&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x53EF;&#x8BBF;&#x95EE;&#x8BE5;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x4E00;&#x5207;&#x9009;&#x9879;</span>
+                desc = {
+                    [<span class="hljs-keyword">this</span>.prop]: <span class="hljs-keyword">this</span>.elform.rules[<span class="hljs-keyword">this</span>.prop]
+                },
+                value ={
+                    [<span class="hljs-keyword">this</span>.prop]: <span class="hljs-keyword">this</span>.elform.model[<span class="hljs-keyword">this</span>.prop]
+                };
+            <span class="hljs-keyword">let</span> validator  = <span class="hljs-keyword">new</span> schema(desc); <span class="hljs-comment">// elementui&#x4E2D;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x7684;&#x6A21;&#x5757;</span>
+            <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;promise</span>
+            <span class="hljs-keyword">return</span> validator.validate(value,(errors,fields) =&gt; {
+                <span class="hljs-keyword">this</span>.error = errors;
+                <span class="hljs-keyword">if</span>(errors){
+                    <span class="hljs-keyword">this</span>.error = errors[<span class="hljs-number">0</span>].message;
+                }
+            })
+        }
+    },
+    mounted() {
+        <span class="hljs-comment">// &#x76D1;&#x542C;</span>
+        <span class="hljs-keyword">this</span>.$on(<span class="hljs-string">&apos;validate&apos;</span>,<span class="hljs-keyword">this</span>.validate);
+    }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- el-input --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;el_input&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">:type</span>=<span class="hljs-string">&quot;type&quot;</span> <span class="hljs-attr">:value</span>=<span class="hljs-string">&apos;value&apos;</span> @<span class="hljs-attr">blur</span>=<span class="hljs-string">&apos;toBlur&apos;</span> @<span class="hljs-attr">input</span>=<span class="hljs-string">&apos;toInput&apos;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    props:{
+        type:{
+            type:<span class="hljs-built_in">String</span>,
+            <span class="hljs-keyword">default</span>:<span class="hljs-string">&apos;text&apos;</span>
+        },
+        <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;v-model&#x65F6;&#x5FC5;&#x987B;&#x8981;&#x6709;&#x4E00;&#x4E2A;key&#x4E3A;value&#x7684;props</span>
+        value:{
+            <span class="hljs-keyword">default</span>:<span class="hljs-string">&apos;&apos;</span>
+        }
+    },
+    methods: {
+        toInput(e){
+            <span class="hljs-comment">// &#x5229;&#x7528;value&#x548C;input&#x4E8B;&#x4EF6;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;v-model</span>
+            <span class="hljs-keyword">this</span>.$emit(<span class="hljs-string">&apos;input&apos;</span>,e.target.value);
+        },
+        toBlur(){
+            <span class="hljs-comment">// &#x5411;&#x4E0A;&#x89E6;&#x53D1;validate&#x4E8B;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x8F93;&#x5165;&#x6846;&#x7684;&#x6B63;&#x786E;&#x6027;</span>
+            <span class="hljs-keyword">this</span>.$dispatch(<span class="hljs-string">&apos;validate&apos;</span>);
+        }
+    }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- &#x5B9E;&#x9645;&#x5E94;&#x7528; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">el-form</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&apos;form&apos;</span> <span class="hljs-attr">:model</span>=<span class="hljs-string">&apos;formModel&apos;</span> <span class="hljs-attr">:rules</span>=<span class="hljs-string">&apos;rules&apos;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">el-form-item</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&apos;&#x7528;&#x6237;&#x540D;&#xFF1A;&apos;</span> <span class="hljs-attr">prop</span>=<span class="hljs-string">&apos;username&apos;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">el-input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&apos;formModel.username&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-input</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">el-form-item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">el-form-item</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&apos;&#x5BC6;&#x7801;&#xFF1A;&apos;</span> <span class="hljs-attr">prop</span>=<span class="hljs-string">&apos;password&apos;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">el-input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&apos;formModel.password&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-input</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">el-form-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">el-form</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;submitForm&apos;</span>&gt;</span>&#x63D0;&#x4EA4;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    data() {
+        <span class="hljs-keyword">return</span> {
+            formModel:{
+                username:<span class="hljs-string">&apos;&apos;</span>,
+                password:<span class="hljs-string">&apos;&apos;</span>
+            },
+            rules:{
+                username: [
+                    { required: <span class="hljs-literal">true</span>, message: <span class="hljs-string">&apos;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&apos;</span>, trigger: <span class="hljs-string">&apos;blur&apos;</span> }
+                ],
+                password: [
+                    { required: <span class="hljs-literal">true</span>, message: <span class="hljs-string">&apos;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&apos;</span>, trigger: <span class="hljs-string">&apos;blur&apos;</span> }
+                ]
+            }
+        }
+    },
+    components:{
+        elForm,
+        elFormItem,
+        elInput
+    },
+    methods:{
+        submitForm(){
+            <span class="hljs-keyword">this</span>.$refs.form.validate(valid =&gt; {
+                <span class="hljs-keyword">if</span>(valid){
+                    alert(<span class="hljs-string">&apos;&#x9A8C;&#x8BC1;&#x6210;&#x529F;&apos;</span>)
+                } <span class="hljs-keyword">else</span> {
+                    alert(<span class="hljs-string">&apos;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;&apos;</span>)
+                }
+            })
+        }
+    }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1381,7 +1588,7 @@ Vue.prototype.$bus = <span class="hljs-keyword">new</span> Bus();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"组件化与通信","level":"4.1.1","depth":2,"previous":{"title":"vue教程","level":"4.1","depth":1,"path":"classification/vue/index.md","ref":"classification/vue/index.md","articles":[{"title":"组件化与通信","level":"4.1.1","depth":2,"path":"classification/vue/组件化与通信.md","ref":"classification/vue/组件化与通信.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart","toggle-chapters","sequence","flow"],"pluginsConfig":{"disqus":{"shortName":"NAME-FROM-DISQUS"},"sequence":{"theme":"simple"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"flow":{"line-color":"red"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"classification/vue/组件化与通信.md","mtime":"2019-07-17T09:35:02.008Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T09:35:26.558Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"组件化与通信","level":"4.1.1","depth":2,"previous":{"title":"vue教程","level":"4.1","depth":1,"path":"classification/vue/index.md","ref":"classification/vue/index.md","articles":[{"title":"组件化与通信","level":"4.1.1","depth":2,"path":"classification/vue/组件化与通信.md","ref":"classification/vue/组件化与通信.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart","toggle-chapters","sequence","flow"],"pluginsConfig":{"disqus":{"shortName":"NAME-FROM-DISQUS"},"sequence":{"theme":"simple"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"flow":{"line-color":"red"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"classification/vue/组件化与通信.md","mtime":"2019-07-17T14:00:28.957Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T14:08:44.161Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
