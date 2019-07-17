@@ -8,6 +8,12 @@
     "pluginsConfig": {
         "disqus": {
             "shortName": "NAME-FROM-DISQUS"
+        },
+        "sequence": {
+            "theme": "simple"
+        },
+        "flow": {
+            "line-color": "red"
         }
     }
 }
