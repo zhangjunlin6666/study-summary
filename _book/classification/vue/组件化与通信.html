@@ -458,7 +458,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- &#x8FD9;&#x91CC;&#x4F20;&#x5165;&#x4E86;slot&#xFF0C;button&#x7684;value&#x4E3A;reset --&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">cButton</span>&gt;</span>{{value}}<span class="hljs-tag">&lt;/<span class="hljs-name">cButton</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">cButton</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">cButton</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
@@ -492,8 +492,8 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- 2.6.0&#x4E4B;&#x524D;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x7ED9;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5B9A;&#x4E49;slot&#x5C5E;&#x6027;&#xFF0C;&#x503C;&#x4E3A;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;name&#x503C; --&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">cDiv</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{{noName}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&apos;hasName&apos;</span>&gt;</span>{{hasName}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&apos;hasName&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">cDiv</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- 2.6.0&#x4E4B;&#x540E;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x4E00;&#x4E2A;&#x4E0D;&#x5E26;name&#x7684;slot&#xFF0C;&#x51FA;&#x53E3;&#x4F1A;&#x5E26;&#x6709;&#x9690;&#x542B;&#x7684;&#x540D;&#x5B57;default&#xFF0C;&#x4E5F;&#x53EF;
             &#x4E0D;&#x5199;v-slot:default&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5199;slot&#x90A3;&#x4E48;&#x6240;&#x6709;&#x6CA1;&#x6709;v-slot&#x7684;&#x5143;&#x7D20;&#x90FD;&#x4F1A;&#x88AB;&#x89C6;&#x4E3A;&#x9ED8;&#x8BA4;
@@ -505,8 +505,8 @@
             &#x6CE8;&#x610F; v-slot &#x53EA;&#x80FD;&#x6DFB;&#x52A0;&#x5728;&#x4E00;&#x4E2A; &lt;template&gt; &#x4E0A;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x4F8B;&#x5916;&#x60C5;&#x51B5;&#x5373;&#x72EC;&#x5360;&#x9ED8;&#x8BA4;&#x63D2;&#x69FD;&#x7684;&#x7F29;&#x5199;&#x8BED;&#x6CD5;
         --&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">cDiv</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>&gt;</span>{{noName}}<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:hasName</span>&gt;</span>{{hasName}}<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:hasName</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">cDiv</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
@@ -550,25 +550,25 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- 2.6.0&#x4E4B;&#x524D;&#x7684;&#x5199;&#x6CD5; --&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">cDiv</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&apos;slotScope&apos;</span>&gt;</span>{{slotScope.scope}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&apos;slotScope&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">cDiv</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- 2.6.0&#x4E4B;&#x540E;&#x7684;&#x5199;&#x6CD5;--&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">cDiv</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">&apos;slotScope&apos;</span>&gt;</span>{{slotScope.scope}}<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">&apos;slotScope&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">cDiv</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- &#x5F53;&#x7136;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528;es6&#x89E3;&#x6784;&#x63D2;&#x69FD;&#x6765;&#x7B80;&#x5316;&#x6211;&#x4EEC;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x91CD;&#x547D;&#x540D;&#x548C;&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x503C; --&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">cDiv</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">&apos;{scope}&apos;</span>&gt;</span>{{scope}}<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">&apos;{scope}&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">cDiv</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- &#x6211;&#x4EEC;&#x7684;&#x5177;&#x540D;&#x63D2;&#x69FD;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7F29;&#x5199;&#x6765;&#x7B80;&#x5316;&#x5199;&#x6CD5;&#xFF0C;&#x8DDF;v-on&#x548C;v-bind&#x4E00;&#x6837;&#xFF0C;v-slot&#x4E5F;&#x6709;&#x7F29;&#x5199;
             &#x5373;&#x628A;&#x53C2;&#x6570;&#x4E4B;&#x524D;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;(v-slot:)&#x66FF;&#x6362;&#x4E3A;&#x5B57;&#x7B26;#&#xFF0C;&#x8BE5;&#x7F29;&#x5199;&#x53EA;&#x5728;&#x5176;&#x6709;&#x53C2;&#x6570;&#x7684;&#x65F6;&#x5019;&#x624D;&#x53EF;&#x7528;&#x3002;
             &#x4E0B;&#x9762;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x662F;&#x65E0;&#x6548;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;&#x8B66;&#x544A;
             &lt;cDiv&gt;
-                &lt;template #=&apos;{scope}&apos;&gt;{{scope}}&lt;/template&gt;
+                &lt;template #=&apos;{scope}&apos;&gt;&lt;/template&gt;
             &lt;/cDiv&gt;
         --&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">cDiv</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">default</span>=<span class="hljs-string">&apos;{scope}&apos;</span>&gt;</span>{{scope}}<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">default</span>=<span class="hljs-string">&apos;{scope}&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">cDiv</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
@@ -626,8 +626,8 @@
 <span class="hljs-comment">&lt;!-- &#x9700;&#x8981;&#x7EE7;&#x627F;BaseComponent&#x7684;&#x7EC4;&#x4EF6; --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;commonMethod&apos;</span>&gt;</span>{{commonData}}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;comMethod&apos;</span>&gt;</span>{{comData}}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;commonMethod&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;comMethod&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
@@ -699,7 +699,7 @@
 <p>&#x5B50;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&apos;item in list&apos;</span>&gt;</span>{{item}}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&apos;item in list&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
@@ -995,7 +995,7 @@ Vue.prototype.$bus = <span class="hljs-keyword">new</span> Bus();
 </code></pre>
 <p>&#x5B50;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{fromBus}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
@@ -1217,7 +1217,7 @@ Vue.prototype.$bus = <span class="hljs-keyword">new</span> Bus();
             <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;center&quot;</span>&gt;</span>
             <span class="hljs-comment">&lt;!-- &#x4F5C;&#x7528;&#x57DF;&#x63D2;&#x69FD;&#x7684;&#x4F7F;&#x7528; --&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;scope&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;!item.slotName&apos;</span>&gt;</span>{{scope.row[item.prop]}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;!item.slotName&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
                 <span class="hljs-comment">&lt;!-- 
                     :scope=&apos;scope&apos;&#x4E3A;&#x4F5C;&#x7528;&#x57DF;&#x63D2;&#x69FD;&#x7ED1;&#x5B9A;&#x7684;&#x6570;&#x636E; 
                     :name=&apos;item.slotName&apos;&#x63D2;&#x69FD;&#x540D;&#x79F0;
@@ -1272,7 +1272,8 @@ Vue.prototype.$bus = <span class="hljs-keyword">new</span> Bus();
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">c-table</span> <span class="hljs-attr">:tabelData</span>=<span class="hljs-string">&apos;tabelData&apos;</span> <span class="hljs-attr">:column</span>=<span class="hljs-string">&apos;column&apos;</span> <span class="hljs-attr">:typeItem</span>=<span class="hljs-string">&apos;typeItem&apos;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&apos;status&apos;</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;{scope}&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{{scope.row.status === 0 ? &quot;&#x6B7B;&#x4E86;&quot;: &quot;&#x6D3B;&#x8E66;&#x4E71;&#x8DF3;&#x7684;&quot;}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- &#x7531;&#x4E8E;&#x5728;window&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;gitbook&#x4E0D;&#x652F;&#x6301;&#x5927;&#x62EC;&#x53F7;&#x4E2D;&#x5199;&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x4F7F;&#x7528;&#x53CD;&#x659C;&#x6760;&#x8F6C;&#x4E49;&#x5927;&#x62EC;&#x53F7;&#x5373;&#x53EF;&#x89E3;&#x51B3;--&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>\{\{scope.row.status === 0 ? &quot;&#x6B7B;&#x4E86;&quot; : &quot;&#x6D3B;&#x8E66;&#x4E71;&#x8DF3;&#x7684;&quot;\}\}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&apos;action&apos;</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;{scope}&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&apos;primary&apos;</span>&gt;</span>&#x5220;&#x9664;<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
@@ -1416,9 +1417,9 @@ Vue.prototype.$bus = <span class="hljs-keyword">new</span> Bus();
 <span class="hljs-comment">&lt;!-- el-form-item --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;el_form-item&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;label&apos;</span>&gt;</span>{{label}}<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;label&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;error&apos;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&apos;color:red&apos;</span>&gt;</span>{{error}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;error&apos;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&apos;color:red&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
@@ -1588,7 +1589,7 @@ Vue.prototype.$bus = <span class="hljs-keyword">new</span> Bus();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"组件化与通信","level":"4.1.1","depth":2,"previous":{"title":"vue教程","level":"4.1","depth":1,"path":"classification/vue/index.md","ref":"classification/vue/index.md","articles":[{"title":"组件化与通信","level":"4.1.1","depth":2,"path":"classification/vue/组件化与通信.md","ref":"classification/vue/组件化与通信.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart","toggle-chapters","sequence","flow"],"pluginsConfig":{"disqus":{"shortName":"NAME-FROM-DISQUS"},"sequence":{"theme":"simple"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"flow":{"line-color":"red"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"classification/vue/组件化与通信.md","mtime":"2019-07-17T14:00:28.957Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T14:08:44.161Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"组件化与通信","level":"4.1.1","depth":2,"previous":{"title":"vue教程","level":"4.1","depth":1,"path":"classification/vue/index.md","ref":"classification/vue/index.md","articles":[{"title":"组件化与通信","level":"4.1.1","depth":2,"path":"classification/vue/组件化与通信.md","ref":"classification/vue/组件化与通信.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart","toggle-chapters","sequence","flow","livereload"],"pluginsConfig":{"disqus":{"shortName":"NAME-FROM-DISQUS"},"sequence":{"theme":"simple"},"livereload":{},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"flow":{"line-color":"red"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"classification/vue/组件化与通信.md","mtime":"2019-07-27T16:53:45.339Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-27T16:53:50.539Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1599,6 +1600,10 @@ Vue.prototype.$bus = <span class="hljs-keyword">new</span> Bus();
     
         
         <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
