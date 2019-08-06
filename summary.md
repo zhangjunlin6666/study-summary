@@ -34,6 +34,11 @@
 * [vue教程](classification/vue/index.md)
   * [组件化与通信](classification/vue/组件化与通信.md)
 
+## 面试章
+
+* [javascript](classification/javascript/index.md)
+  * [作用域](classification/javascript/Scope.md)
+
 <!-- 
 ## 第三章关于git简单用法（目前仅限用于简单的gitbook书籍提交）
 
