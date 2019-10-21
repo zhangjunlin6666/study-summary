@@ -1,3 +1,9 @@
+<!--
+ * @Author: jackson
+ * @Date: 2019-08-07 16:30:17
+ * @LastEditors: jackson
+ * @LastEditTime: 2019-10-21 18:36:06
+ -->
 
 # SUMMARY.md
 
@@ -27,12 +33,13 @@
 
 ## 第二章关于gitbook简介
 
-* [gitbook教程](classification/gitbook/index.md)
+* [gitbook相关](classification/gitbook/index.md)
 
-## 第三章vue教程
+## 第三章vue相关
 
-* [vue教程](classification/vue/index.md)
+* [vue相关](classification/vue/index.md)
   * [组件化与通信](classification/vue/组件化与通信.md)
+  * [vue-router源码解读](classification/vue/vue-router源码解读.md)
 
 ## 面试章
 
