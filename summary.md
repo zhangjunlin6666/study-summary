@@ -2,7 +2,7 @@
  * @Author: jackson
  * @Date: 2019-08-07 16:30:17
  * @LastEditors: jackson
- * @LastEditTime: 2019-10-21 18:36:06
+ * @LastEditTime: 2019-10-23 15:07:13
  -->
 
 # SUMMARY.md
@@ -40,6 +40,7 @@
 * [vue相关](classification/vue/index.md)
   * [组件化与通信](classification/vue/组件化与通信.md)
   * [vue-router源码解读](classification/vue/vue-router源码解读.md)
+  * [vuex源码解读](classification/vue/vuex源码解读.md)
 
 ## 面试章
 

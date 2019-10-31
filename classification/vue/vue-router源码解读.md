@@ -2,12 +2,12 @@
  * @Author: jackson
  * @Date: 2019-08-19 21:34:18
  * @LastEditors: jackson
- * @LastEditTime: 2019-10-21 18:40:04
+ * @LastEditTime: 2019-10-22 18:15:13
  -->
 
 # vue-router源码解读
 
-该小节主要介绍vue-router（目录结构自行研究）源码从打包构建到各api底层实现的详细解读，如有解读不对的地方欢迎在issue中评论[issues](https://github.com/zhangjunlin6666/study-summary/issues),当然在读本教程前，需要读者熟悉vue-router的基本用法，且有一定的项目开发经验，这样能更好的理解源码实现。同时附上vue-router官网以及相关周边
+该小节主要介绍vue-router（目录结构自行研究）源码从打包构建到各api底层实现的粗略解读，如有解读不对的地方欢迎在issue中评论[issues](https://github.com/zhangjunlin6666/study-summary/issues),当然在读本教程前，需要读者熟悉vue-router的基本用法，且有一定的项目开发经验，这样能更好的理解源码实现。同时附上vue-router官网以及相关周边
 
 [vue-router官网](https://router.vuejs.org/zh/)
 
@@ -85,6 +85,10 @@ Vue.util.defineReactive方法是vue提供的一种响应式数据的方式！
 ![mode](./../../img/router-mode.png)
 
 vue-router针对几种模式定义了对应模式的方法（例如：push、go、replace、resolve、addroutes、getMatchedComponents以及钩子函数beforeEach、afterEach、beforeResolve，事件onError、onReady。）以及路由初始化方法init，该方法（init）在install的vue.mixin中调用，并传入当前vue实例！
+
+hash模式是基于onchangehash以及window.location.hash实现的，[hash](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/onhashchange)
+
+history模式是基于h5的history API实现的，[history](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API)
 
 ![init](./../../img/router-init.png)
 
