@@ -1,8 +1,8 @@
 <!--
  * @Author: jackson
  * @Date: 2019-08-07 16:30:17
- * @LastEditors: jackson
- * @LastEditTime: 2019-10-23 15:07:13
+ * @LastEditors  : jackson
+ * @LastEditTime : 2020-01-02 17:10:06
  -->
 
 # SUMMARY.md
@@ -41,6 +41,9 @@
   * [组件化与通信](classification/vue/组件化与通信.md)
   * [vue-router源码解读](classification/vue/vue-router源码解读.md)
   * [vuex源码解读](classification/vue/vuex源码解读.md)
+* [vue源码解读](classification/vue源码/index.md)
+  * [vue入口查找](classification/vue源码/vue入口查找.md)
+  * [vue初始化过程](classification/vue源码/vue初始化过程.md)
 
 ## 面试章
 
