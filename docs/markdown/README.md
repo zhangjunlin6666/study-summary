@@ -36,6 +36,6 @@ Markdown 能被使用来撰写电子书，如：Gitbook。
 推荐使用Typora 编辑器来编写 Markdown，Typora 支持 MacOS 、Windows、Linux 平台，且包含多种主题，编辑后直接渲染出效果。
 支持导出HTML、PDF、Word、图片等多种类型文件。
 
-**Typora 官网：**https://typora.io/
+Typora 官网：[Typora](https://typora.io/)
 
-**你也可以使用菜鸟网的在线编辑器来测试：**https://c.runoob.com/front-end/712。
+你也可以使用菜鸟网的在线编辑器来测试：[在线编辑器](https://c.runoob.com/front-end/712)
