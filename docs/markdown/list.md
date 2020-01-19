@@ -20,16 +20,19 @@ markdown支持有序列表和无序列表
         - blue
 
 星号演示：
+
 * red
 * green
 * blue
 
 加号演示：
+
 + red
 + green
 + blue
   
 减号演示：
+
 - red
 - green
 - blue
@@ -49,6 +52,7 @@ markdown支持有序列表和无序列表
         </ol>
 
 演示：
+
 1. bird
 
 2. mchale
@@ -62,7 +66,7 @@ markdown支持有序列表和无序列表
     > This is a blockquote
     > inside a list item.
 
-*   A list item with a blockquote:
+* A list item with a blockquote:
     > This is a blockquote
     > inside a list item.
 
@@ -80,13 +84,14 @@ markdown支持有序列表和无序列表
 
 演示：
 
-*   one
+* one
 
     var a = 10;
 
 5、有、无序列表嵌套
 
 代码：
+
     1. one
        1. one-1
        2. two-2

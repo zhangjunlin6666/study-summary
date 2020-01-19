@@ -1,8 +1,8 @@
 <!--
  * @Author: jackson
  * @Date: 2019-10-22 11:33:21
- * @LastEditors: jackson
- * @LastEditTime: 2019-10-31 16:50:43
+ * @LastEditors  : jackson
+ * @LastEditTime : 2020-01-05 23:37:44
  -->
 
 # vuex源码解读
@@ -11,7 +11,7 @@
 
 [vuex官网](https://vuex.vuejs.org/zh/)
 
-![vuex](./../../img/vuex.png)
+![vuex](/img/vuex.png)
 
 ## 源码解读
 
@@ -23,9 +23,9 @@
 
 从index.js中得知，install是从store.js中导入的，在install函数中会接收传入的vue构造函数用于对vue的扩展，这个vue参数是在调用vue.use时传入的，然后调用了applyMixin(Vue)方法，该方法在src下的mixin.js中，applyMixin首先获取vue的版本号，针对vue1.0和2.0分别做不同处理，如果是2.0就使用vue.mixin在this上挂载$store属性，如果是1.0就会在vue的初始化函数_init上进行扩展从而挂载$store属性，对于$store的挂载，不同于vue-router直接在vue.prototype上挂载$router以及$route，vuex是在根实例的this上挂载$store，然后在子组件中会去判断是否存在父组件以及父组件是否有$store属性，如果条件满足，就给当前子组件实例挂载$store,并将父组件的$store赋值给子组件的$store。
 
-![install](./../../img/vuex-install.png)
+![install](/img/vuex-install.png)
 
-![applyMixin](./../../img/install-mixin.png)
+![applyMixin](/img/install-mixin.png)
 
 ### 分析store中的Store类做了什么
 

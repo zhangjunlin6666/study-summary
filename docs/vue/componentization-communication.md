@@ -252,9 +252,9 @@ export default {
 </script>
 ```
 
-## 下面将介绍几种组件通信的方式。
+## 下面将介绍几种组件通信的方式
 
-## 第一种父组件与自组件通信 ———— props
+## 第一种父组件与自组件通信props
 
 props是在子组件中定义的一个选项，可将父组件中的数据通过定义的props传递到子组件中，它拥有的类型如下所示：
 
@@ -342,7 +342,7 @@ Vue.component('my-component', {
 </script>
 ```
 
-## 第二种子组件与父组件通信 ———— $emit
+## 第二种子组件与父组件通信$emit
 
 子组件与父组件通信是通过在子组件中使用$emit触发某个事件并传递参数（根据需要可传可不传），并在父组件中通过指令v-on:eventname（或者@:eventname）绑定事件并接受参数来实现的。
 
@@ -854,7 +854,7 @@ export default {
 
 ## 第八种终极通信方式vuex
 
-![vuex](./../../img//vuex.png)
+![vuex](/img/vuex.png)
 
 ### 1.简要介绍Vuex原理
 
@@ -886,7 +886,7 @@ vuex 是 vue 的状态管理器，存储的数据是响应式的。但是并不�
 
 #### $attr、$listeners通信以及slot插槽案例
 
-已我基于elementui的table组件二次封装的表格组件为例，可以通过配置数据列表以及column列的列表达到动态渲染的效果，
+以我基于elementui的table组件二次封装的表格组件为例，可以通过配置数据列表以及column列的列表达到动态渲染的效果，
 类似于iview的列表配置。
 
 ```html

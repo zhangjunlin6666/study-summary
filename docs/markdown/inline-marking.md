@@ -15,18 +15,18 @@ Use the `printf()` function.
 
     多行：
         `
-        < div>
-            < div></div>
-            < div></div>
-            < div></div>
-        < /div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         `
 演示：
 
 `
-< div>
-    < div></div>
-    < div></div>
-    < div></div>
-< /div>
+<div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
 `

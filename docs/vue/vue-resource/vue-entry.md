@@ -2,10 +2,12 @@
  * @Author: jackson
  * @Date: 2020-01-02 16:57:08
  * @LastEditors  : jackson
- * @LastEditTime : 2020-01-02 17:10:40
+ * @LastEditTime : 2020-01-18 16:53:02
  -->
 
 # vue入口
+
+[vue源码解读好文推荐]( https://nlrx-wjc.github.io/Learn-Vue-Source-Code/)
 
 所谓入口，就是vue开始的地方，那么首先就需要找到定义Vue构造函数的文件，从入口开始一步一步分析源码。
 
@@ -13,25 +15,25 @@
 
 在config.js中找到builds中的web-full-dev，我们看到它的入口文件为entry-runtime-with-compiler.js，即打包后的vue是带编译器的。下面从这个文件开始查找vue入口。
 
-## entry-runtime-with-compiler.js文件路径
+## entry-runtime-with-compiler.js位置
 
 > /src/platforms/web/entry-runtime-with-compiler.js
 
 在该文件中，我们看到 import Vue from './runtime/index'，打开./runtime/index文件
 
-## ./runtime/index文件路径
+## runtime/index位置
 
 > /src/platforms/web/runtime/index.js
 
 在该文件中，我们看到 import Vue from 'core/index'，打开core/index文件
 
-## core/index文件路径
+## core/index位置
 
 > /src/core/config.js
 
 在该文件中，我们看到 import Vue from './instance/index', 打开./instance/index文件
 
-## ./instance/index文件路径
+## instance/index位置
 
 > /src/core/instance/index.js
 
@@ -52,11 +54,11 @@ function Vue (options) {
   this._init(options)
 }
 
-initMixin(Vue)
-stateMixin(Vue)
-eventsMixin(Vue)
-lifecycleMixin(Vue)
-renderMixin(Vue)
+initMixin(Vue) // 该方法是在vue的原型上定义_init方法
+stateMixin(Vue) // 该方法在vue的原型上定义了$data、$props属性，以及$el、$delete、$watch方法
+eventsMixin(Vue) // 该方法在vue原型上定义了事件相关的方法，$on\$once\$event\$off
+lifecycleMixin(Vue) // 该方法在vue原型上定义了_update、$forceUpdate、$destroy方法
+renderMixin(Vue) // 该方法在vue原型上定义了$nextTick、_render方法
 
 export default Vue
 ```

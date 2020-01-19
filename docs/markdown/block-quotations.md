@@ -51,7 +51,7 @@ id sem consectetuer libero luctus adipiscing.
 
 4、代码4，引用的区块内也可以使用其他的markdown语法，包括标题、列表、代码区块等：
 
-    > ## 这是一个标题。
+    > 这是一个标题。
     > 
     > 1.   这是第一行列表项。
     > 2.   这是第二行列表项。
@@ -62,7 +62,7 @@ id sem consectetuer libero luctus adipiscing.
 
 演示4:
 
-> ## 这是一个标题。
+> 这是一个标题。
 > 
 > 1.   这是第一行列表项。
 > 2.   这是第二行列表项。

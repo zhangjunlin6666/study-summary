@@ -2,7 +2,7 @@
  * @Author: jackson
  * @Date: 2019-08-07 16:30:17
  * @LastEditors  : jackson
- * @LastEditTime : 2020-01-02 17:10:06
+ * @LastEditTime : 2020-01-05 22:10:28
  -->
 
 # SUMMARY.md
@@ -14,20 +14,6 @@
 ## 第一章关于markdown用法
 
 * [markdown简介](classification/markdown/index.md)
-  * [1.标题](classification/markdown/标题.md)
-  * [2.区块引用](classification/markdown/引用.md)
-  * [3.列表](classification/markdown/列表.md)
-  * [4.代码区块](classification/markdown/代码区块.md)
-  * [5.分割线](classification/markdown/分割线.md)
-  * [6.插入链接](classification/markdown/插入链接.md)
-  * [7.插入图片](classification/markdown/插入图片.md)
-  * [8.语义](classification/markdown/语义.md)
-  * [9.行内标记](classification/markdown/行内标记.md)
-  * [10.代码块](classification/markdown/代码块.md)
-  * [11.表格](classification/markdown/表格.md)
-  * [12.脚注](classification/markdown/脚注.md)
-  * [13.自动链接](classification/markdown/自动链接.md)
-  * [14.斜杠转义](classification/markdown/斜杠转义.md)
   <!-- * [15.时序图](classification/markdown/时序图.md) -->
   <!-- * [16.流程图](classification/markdown/流程图.md) -->
 

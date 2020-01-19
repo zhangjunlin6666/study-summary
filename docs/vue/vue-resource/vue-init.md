@@ -2,43 +2,15 @@
 
 通过vue入口文件的查找，我们知道vue的入口函数在/src/core/instance/index.js文件中。
 
-## 1、/src/core/instance/index.js所做的事情
+在入口函数Vue中只做了一件事那就是执行了_init函数，从当前函数可以得知_init函数是定义在Vue原型上的，根据入口文件中的函数调用，我们猜测，_init是定义在initMixin(Vue)中，该_init方法在new Vue()和实力化组件时都会调用！
 
-初始化Vue函数，执行initMixin、stateMixin、eventsMixin、lifecycleMixin、renderMixin
+> initMixin方法位置/src/core/instance/init.js
 
-```javascript
-import { initMixin } from './init'
-import { stateMixin } from './state'
-import { renderMixin } from './render'
-import { eventsMixin } from './events'
-import { lifecycleMixin } from './lifecycle'
-import { warn } from '../util/index'
+该方法中只在Vue.protype上定义了一个_init方法。
 
-function Vue (options) {
-  if (process.env.NODE_ENV !== 'production' && !(this instanceof Vue)) {
-    warn('Vue is a constructor and should be called with the `new` keyword')
-  }
-  this._init(options)
-}
+## _init方法
 
-initMixin(Vue) // 该方法是在vue的原型上定义_init方法
-stateMixin(Vue) // 该方法在vue的原型上定义了$data、$props属性，以及$el、$delete、$watch方法
-eventsMixin(Vue) // 该方法在vue原型上定义了事件相关的方法，$on\$once\$event\$off
-lifecycleMixin(Vue) // 该方法在vue原型上定义了_update、$forceUpdate、$destroy方法
-renderMixin(Vue) // 该方法在vue原型上定义了$nextTick、_render方法
-
-export default Vue
-```
-
-在我们使用new关键字进行vue实例化时，Vue构造函数内部执行了_init方法，并将选项参数传入进去，那么我们的_init定义在哪儿呢？我们可以猜想一下_init方式是否存在于vue的原型上呢？实际上就是存在于原型上，该方法是在执行initMixin(Vue)方法时定义的，那么先来看initMixin做了什么吧！
-
-## 1.1、initMixin方法存放的位置：/src/core/instance/init.js
-
-`initMixin`方法只做了一件事儿，就是在vue的原型上定义了在new Vue()中调用的`_init`方法。
-
-`在调用new Vue()的时候会执行_init()方法，来看看_init()方法做了那些事情吧`。
-
-在该方法中会判断当前实例是否是组件，如果是执行`initInternalComponent(vm,options)`方法初始组件，如果不是就合并默认选项与传入的选项。
+在该方法中会判断当前实例是否是组件，如果是执行`initInternalComponent(vm,options)`方法初始组件，如果不是就合并默认选项与传入的选项，最终返回的都是组件的配置选项。
 
 ``` javascript
 // 这里会给vm.$options赋值
@@ -66,7 +38,9 @@ initProvide(vm) // 初始化provide
 callHook(vm, 'created') // 执行created钩子
 ```
 
-### 1.1.1、initLifecycle方法存放的位置：/src/core/instance/lifecycle.js
+### initLifecycle方法
+
+>方法存放的位置：/src/core/instance/lifecycle.js
 
 `initLifecycle`方法中初始化了当前组件$refs、$children、$root、$parent，以及如果当前组件有父组件，那么将当前组件push到父组件的$children数组中。
 
