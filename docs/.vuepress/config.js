@@ -2,7 +2,13 @@
  * @Author: jackson
  * @Date: 2020-01-02 17:47:15
  * @LastEditors: jackson
- * @LastEditTime: 2020-05-22 23:28:18
+ * @LastEditTime: 2020-05-25 23:03:11
+ */ 
+/*
+ * @Author: jackson
+ * @Date: 2020-01-02 17:47:15
+ * @LastEditors: jackson
+ * @LastEditTime: 2020-05-23 16:48:10
  */
 const path = require("path");
 module.exports = {
@@ -22,71 +28,27 @@ module.exports = {
                 items: [
                     {
                         text: 'vue常用技巧',
-                        items: [
-                            {
-                                text: 'vue组件化与通信',
-                                link: '/vue/vue-common/componentization-communication'
-                            }
-                        ]
+                        link: '/vue/vue-common/'
                     },
                     {
-                        text: 'vuex',
-                        items: [
-                            {
-                                text: 'vuex源码解读',
-                                link: '/vue/vuex/vuex-resource-resolve'
-                            }
-                        ] 
+                        text: 'vuex相关',
+                        link: '/vue/vuex/'
                     },
                     {
-                        text: 'vue-router',
-                        items: [
-                            {
-                                text: 'vue-router源码解读',
-                                link: '/vue/vue-router/vue-router-resource-resolve'
-                            }
-                        ] 
+                        text: 'vue-router相关',
+                        link: '/vue/vue-router/' 
                     },
                     {
-                        text: 'vue',
-                        items: [
-                            {
-                                text: 'vue源码解读',
-                                link: '/vue/vue-resource/vue-entry'
-                            }
-                        ]
+                        text: 'vue相关',
+                        link: '/vue/vue-resource/'
                     },
                 ]
             },
             {
                 text: "总结",
                 items: [
-                    {
-                        text: "工作总结",
-                        items: [
-                            {
-                                text: "js打印",
-                                link: "/summary/workSummary/print",
-                            },
-                            {
-                                text: "cookie",
-                                link: "/summary/workSummary/cookie",
-                            },
-                            {
-                                text: "rem",
-                                link: "/summary/workSummary/rem",
-                            },
-                            {
-                                text: "webrtc",
-                                link: "/summary/workSummary/webrtc",
-                            },
-                            {
-                                text: "network",
-                                link: "/summary/workSummary/network",
-                            }
-                        ]
-                    }
-                    
+                    { text: "工作总结",link: "/summary/workSummary/"},
+                    { text: "读书总结",link: "/summary/readSummary/"}
                 ]
             }
         ],
@@ -96,12 +58,11 @@ module.exports = {
         editLinkText: "在 GitHub 上编辑此页",
         lastUpdated: "上次更新",
         smoothScroll: true,
-        sidebarDepth: 1,
+        // sidebarDepth: 1,
         sidebar: {
             '/markdown/': [
                 {
                     title: "markdown语法",
-                    collapsable: false,
                     children: [
                         ['', 'markdown介绍'],
                         ['title', '标题'],
@@ -127,12 +88,22 @@ module.exports = {
                 {
                     title: "vue常用技巧",
                     children: [
-                        ['vue-common/componentization-communication', 'vue组件化与通信']
+                        ['vue-common/', '主题'],
+                        ['vue-common/componentization-communication', 'vue组件化与通信'],
+                        {
+                            title: "自定义组件",
+                            children: [
+                                ['vue-common/loading', 'loading组件'],
+                                ['vue-common/toast', 'toast组件'],
+                                ['vue-common/cart-ball', '购物车小球组件']
+                            ]
+                        }
                     ]
                 },
                 {
                     title: "vuex相关",
                     children: [
+                        ['vuex/', '主题'],
                         ['vuex/vuex-resource-resolve', 'vuex源码解读'],
                     ]
                 },
@@ -140,6 +111,7 @@ module.exports = {
                     title: "vue-router相关",
                     // collapsable: false, 是否展开菜单
                     children: [
+                        ['vue-router/', '主题'],
                         ['vue-router/vue-router-resource-resolve', 'vue-router源码解读']
                     ]
                 },
@@ -147,6 +119,7 @@ module.exports = {
                     title: "vue源码",
                     sidebarDepth: 2,
                     children: [
+                        ['vue-resource/','主题'],
                         ['vue-resource/vue-entry','vue入口查找'],
                         ['vue-resource/vue-init','vue初始化']
                     ]
@@ -155,19 +128,33 @@ module.exports = {
             '/summary/': [
                 {
                     title: "工作总结",
+                    sidebarDepth: 1,
                     children: [
-                        ['workSummary/print', 'js打印'],
-                        ['workSummary/cookie', 'cookie'],
-                        ['workSummary/rem', 'rem'],
-                        ['workSummary/webrtc', 'webrtc'],
-                        ['workSummary/network', '网速检测'],
+                        ['workSummary/', "主题"],
+                        ['workSummary/cookie', "cookie"],
+                        ['workSummary/rem', "rem适配"],
+                        ['workSummary/print', "js打印"],
+                        ['workSummary/network', "网速检测"],
+                        ['workSummary/other', "其他"],
+                        {
+                            title: "webrtc相关",
+                            children: [
+                                ["workSummary/webrtc/getParams", "获取当前音视频参数"]
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "读书总结",
+                    children: [
+                        ['readSummary/', "主题"]
                     ]
                 }
             ]
         }
     },
     markdown: {
-        lineNumbers: true // 为代码快配置行号
+        lineNumbers: true, // 为代码快配置行号
     },
     plugins: [
         ['@vuepress/back-to-top', true],

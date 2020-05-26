@@ -1,10 +1,3 @@
-<!--
- * @Author: jackson
- * @Date: 2020-05-22 23:27:50
- * @LastEditors: jackson
- * @LastEditTime: 2020-05-23 00:08:14
--->
-
 # rem
 
 [移动端rem布局的通俗易懂](https://www.jianshu.com/p/64e5834cc81d)
@@ -13,10 +6,9 @@
 
 [rem布局原理深度理解（以及em/vw/vh）](https://www.cnblogs.com/leaf930814/p/9059340.html)
 
-# 动态计算rem
+# 自行实现动态计算rem
 
 ``` javascript
-
 // 设置 rem 函数
 function setRem () {
 
@@ -33,9 +25,107 @@ setRem();
 // 改变窗口大小时重新设置 rem
 window.onresize = function () {
   setRem();
+}
+```
 
+```javascript
+(function (doc, win) {
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ?
+                    'orientationchange' :
+                    'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if(clientWidth>=750){
+                docEl.style.fontSize = '100px';
+            }else{
+                docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+        };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+```
+
+# 通过淘宝lib-flexible实现动态计算rem
+
+```
+1. 安装 npm i lib-flexible --save
+
+2. 引入lib-flexible import "lib-flexible"
 ```
 
 # px换算成rem
 
-px换算rem可通过一些node包实现，比喻postcss-pxtorem以及
+```
+px换算rem可通过一些node包实现，比喻postcss-pxtorem以及px2rem-loader
+```
+
+# postcss-pxtorem配置
+
+```javascript
+
+1. 安装 npm i postcss-pxtorem --save-dev
+
+2. 在postcss.config.js中配置
+
+module.exports = {
+  plugins: {
+    'autoprefixer': {
+      browsers: ['Android >= 4.0', 'iOS >= 7']
+    },
+    'postcss-pxtorem': {
+      rootValue: 16,//结果为：设计稿元素尺寸/16，比如元素宽320px,最终页面会换算成 20rem
+      propList: ['*']
+    }
+  }
+}
+
+3. 在vue中的vue.config.js中配置
+
+css: {
+  loaderOptions: {
+    postcss: {
+      plugins: [
+        require("postcss-pxtorem")({ // 把px单位换算成rem单位
+          rootValue: 37.5,
+          unitPrecision: 5, // 最小精度，小数点位数
+          propList: ["*"], // !不匹配属性（这里是字体相关属性不转换）
+          minPixelValue:1 // 替换的最小像素值
+        })
+      ]
+    }
+  }
+}
+
+```
+
+# px2rem-loader配置
+
+```javascript
+
+1. 安装 npm i px2rem-loader --save-dev
+
+2. 在webpack的loader中配置
+
+module.exports = {
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: [{
+        loader: 'style-loader'
+      }, {
+        loader: 'css-loader'
+      }, {
+        loader: 'px2rem-loader',
+        options: {
+          remUni: 75,
+          remPrecision: 8
+        }
+      }]
+    }]
+  }
+}
+```

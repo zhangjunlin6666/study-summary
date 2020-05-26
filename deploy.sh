@@ -1,8 +1,8 @@
 ###
  # @Author: jackson
  # @Date: 2020-01-03 11:49:25
- # @LastEditors  : jackson
- # @LastEditTime : 2020-01-04 18:10:18
+ # @LastEditors: jackson
+ # @LastEditTime: 2020-05-23 18:08:20
  ###
 #!/usr/bin/env sh
 
@@ -31,6 +31,7 @@ git commit -m 'deploy'
 # 如果使用 travis 持续集成 
 # travis ci平台 https://www.travis-ci.org/zhangjunlin6666/study-summary/settings
 # vuepress从搭建到部署 https://www.jianshu.com/p/a7435b8bc8bc
+# vuepress从搭建到部署 https://b.himnt.top/blog/base/
 git push -f https://${access_token}@github.com/zhangjunlin6666/study-summary.git master:gh-pages
 
 cd -

@@ -1,10 +1,3 @@
-<!--
- * @Author: jackson
- * @Date: 2020-05-21 23:45:55
- * @LastEditors: jackson
- * @LastEditTime: 2020-05-22 22:03:06
--->
-
 # js调用打印机
 
 ``` javascript
