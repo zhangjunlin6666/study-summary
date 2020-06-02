@@ -2,7 +2,7 @@
  * @Author: jackson
  * @Date: 2020-01-02 17:47:15
  * @LastEditors: jackson
- * @LastEditTime: 2020-05-25 23:03:11
+ * @LastEditTime: 2020-05-28 00:15:16
  */ 
 /*
  * @Author: jackson
@@ -48,7 +48,7 @@ module.exports = {
                 text: "总结",
                 items: [
                     { text: "工作总结",link: "/summary/workSummary/"},
-                    { text: "读书总结",link: "/summary/readSummary/"}
+                    // { text: "读书总结",link: "/summary/readSummary/"}
                 ]
             }
         ],
@@ -93,9 +93,10 @@ module.exports = {
                         {
                             title: "自定义组件",
                             children: [
-                                ['vue-common/loading', 'loading组件'],
-                                ['vue-common/toast', 'toast组件'],
-                                ['vue-common/cart-ball', '购物车小球组件']
+                                ['vue-common/components/loading', 'loading组件'],
+                                ['vue-common/components/toast', 'toast组件'],
+                                ['vue-common/components/cart-ball', '购物车小球组件'],
+                                ['vue-common/components/mask', '蒙层组件']
                             ]
                         }
                     ]
@@ -135,21 +136,22 @@ module.exports = {
                         ['workSummary/rem', "rem适配"],
                         ['workSummary/print', "js打印"],
                         ['workSummary/network', "网速检测"],
-                        ['workSummary/other', "其他"],
+                        ['workSummary/sliceUpload', "分片上传"],
                         {
                             title: "webrtc相关",
                             children: [
                                 ["workSummary/webrtc/getParams", "获取当前音视频参数"]
                             ]
-                        }
+                        },
+                        ['workSummary/other', "其他"]
                     ]
                 },
-                {
-                    title: "读书总结",
-                    children: [
-                        ['readSummary/', "主题"]
-                    ]
-                }
+                // {
+                //     title: "读书总结",
+                //     children: [
+                //         ['readSummary/', "主题"]
+                //     ]
+                // }
             ]
         }
     },
