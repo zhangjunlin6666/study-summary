@@ -2,14 +2,14 @@
  * @Author: jackson
  * @Date: 2020-05-28 01:07:54
  * @LastEditors: jackson
- * @LastEditTime: 2020-05-28 01:08:59
+ * @LastEditTime: 2020-06-02 22:18:01
 -->
 
 # 图片压缩
 
+[vue、js实现图片等比缩放](https://blog.csdn.net/baidu_29701003/article/details/90520673)
+
 ``` html
-
-
 <!DOCTYPE>
 <html>
 <head>

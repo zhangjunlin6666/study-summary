@@ -2,7 +2,7 @@
  * @Author: jackson
  * @Date: 2020-01-02 17:47:15
  * @LastEditors: jackson
- * @LastEditTime: 2020-05-28 00:15:16
+ * @LastEditTime: 2020-06-02 23:13:57
  */ 
 /*
  * @Author: jackson
@@ -47,7 +47,9 @@ module.exports = {
             {
                 text: "总结",
                 items: [
-                    { text: "工作总结",link: "/summary/workSummary/"},
+                    { text: "工作积累",link: "/summary/workSummary/"},
+                    { text: "项目心得",link: "/summary/project/"},
+                    { text: "博客收集",link: "/summary/blog/"}
                     // { text: "读书总结",link: "/summary/readSummary/"}
                 ]
             }
@@ -128,7 +130,7 @@ module.exports = {
             ],
             '/summary/': [
                 {
-                    title: "工作总结",
+                    title: "工作积累",
                     sidebarDepth: 1,
                     children: [
                         ['workSummary/', "主题"],
@@ -137,6 +139,7 @@ module.exports = {
                         ['workSummary/print', "js打印"],
                         ['workSummary/network', "网速检测"],
                         ['workSummary/sliceUpload', "分片上传"],
+                        ['workSummary/pictureCompression', "图片压缩"],
                         {
                             title: "webrtc相关",
                             children: [
@@ -146,12 +149,17 @@ module.exports = {
                         ['workSummary/other', "其他"]
                     ]
                 },
-                // {
-                //     title: "读书总结",
-                //     children: [
-                //         ['readSummary/', "主题"]
-                //     ]
-                // }
+                {
+                    title: "项目心得",
+                    children: [
+                        ['project/', "主题"],
+                        ['project/backEndSystem', "后台管理系统"]
+                    ]
+                },
+                {
+                    title: "技术博客收集",
+                    path: "blog/"
+                }
             ]
         }
     },
