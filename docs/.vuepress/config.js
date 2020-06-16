@@ -2,7 +2,7 @@
  * @Author: jackson
  * @Date: 2020-01-02 17:47:15
  * @LastEditors: jackson
- * @LastEditTime: 2020-06-02 23:13:57
+ * @LastEditTime: 2020-06-12 08:42:08
  */ 
 /*
  * @Author: jackson
@@ -17,7 +17,10 @@ module.exports = {
     title: '心尘的技术博客', // 页面标题
     description: '前端学习 学习记录 工作记录 博客收集', // 页面描述
     head: [
-        ['link', { rel: 'icon', type: "image/x-icon", href: `/study-summary/img/logo.jpg`}] // // 页面link标签
+        ['link', { rel: 'icon', type: "image/x-icon", href: `/study-summary/img/logo.jpg`}], // // 页面link标签
+        ['script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js' }],
+        ['script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js' }],
+        ['link', { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css' }]
     ],
     themeConfig: {
         logo: '/img/logo.jpg',
@@ -153,7 +156,12 @@ module.exports = {
                     title: "项目心得",
                     children: [
                         ['project/', "主题"],
-                        ['project/backEndSystem', "后台管理系统"]
+                        {
+                            title: "后台管理系统",
+                            children: [
+                                ["project/backEndSystem/vue", "vue技术栈"]
+                            ]
+                        }
                     ]
                 },
                 {
