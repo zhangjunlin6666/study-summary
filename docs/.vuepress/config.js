@@ -25,7 +25,7 @@ module.exports = {
     themeConfig: {
         logo: '/img/logo.jpg',
         nav: [
-            { text: 'markdown语法', link: '/markdown/' },
+            { text: '基础相关', link: '/base/markdown/' },
             { 
                 text: 'vue生态相关', 
                 items: [
@@ -65,29 +65,35 @@ module.exports = {
         smoothScroll: true,
         // sidebarDepth: 1,
         sidebar: {
-            '/markdown/': [
+            '/base/': [
                 {
                     title: "markdown语法",
                     children: [
-                        ['', 'markdown介绍'],
-                        ['title', '标题'],
-                        ['block-quotations', '区块引用'],
-                        ['list', '列表'],
-                        ['code-area-block', '代码区块'],
-                        ['hr', '分割线'],
-                        ['insert-link', '插入连接'],
-                        ['insert-img', '插入图片'],
-                        ['semantics', '语义'],
-                        ['inline-marking', '行内标记'],
-                        ['code-block', '代码块'],
-                        ['table', '表格'],
-                        ['footnote', '脚注'],
-                        ['auto-link', '自动链接'],
-                        ['slash-escape', '斜杠转义'],
+                        ['markdown/', 'markdown介绍'],
+                        ['markdown/title', '标题'],
+                        ['markdown/block-quotations', '区块引用'],
+                        ['markdown/list', '列表'],
+                        ['markdown/code-area-block', '代码区块'],
+                        ['markdown/hr', '分割线'],
+                        ['markdown/insert-link', '插入连接'],
+                        ['markdown/insert-img', '插入图片'],
+                        ['markdown/semantics', '语义'],
+                        ['markdown/inline-marking', '行内标记'],
+                        ['markdown/code-block', '代码块'],
+                        ['markdown/table', '表格'],
+                        ['markdown/footnote', '脚注'],
+                        ['markdown/auto-link', '自动链接'],
+                        ['markdown/slash-escape', '斜杠转义'],
                         // ['/markdown/sequence-diagram', '时序图'],
                         // ['/markdown/flow-chart', '流程图'],
                     ]
-                }
+                },
+                {
+                    title: "数据结构与算法",
+                    children: [
+                        ['algorithm/stack', '栈'],
+                    ]
+                },
             ],
             '/vue/': [
                 {
